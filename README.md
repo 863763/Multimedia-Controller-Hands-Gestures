@@ -13,3 +13,12 @@ This repository contains the following contents:
 - Finger gesture recognition model (TFLite).
 - Learning data for hand sign recognition and notebook for learning.
 - Learning data for finger gesture recognition and notebook for learning.
+
+# Requirements
+
+- Mediapipe 0.8.4
+- OpenCV 4.6.0.66 or Later
+- Tensorflow 2.9.0 or Later
+- protobuf <3.20,>=3.9.2
+- scikit-learn 1.0.2 or Later (only if you want to show the confusion matrix during training)
+- matplotlib 3.5.1 or later (only if you want to show the confusion matrix during training)
