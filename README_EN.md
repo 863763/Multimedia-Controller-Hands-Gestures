@@ -22,3 +22,41 @@ This repository contains the following contents:
 - protobuf <3.20,>=3.9.2
 - scikit-learn 1.0.2 or Later (only if you want to show the confusion matrix during training)
 - matplotlib 3.5.1 or later (only if you want to show the confusion matrix during training)
+
+# Demonstration
+
+Here's how to run the demo using your webcam.
+
+````python
+python main.py 
+````
+Here is how to run the demo using Docker and a webcam.
+
+````bash
+docker build -t hand_gesture .
+
+host +local: && \
+docker run --rm -it \
+--device /dev/video0:/dev/video0 \
+-v `pwd`:/home/user/workdir \
+-v /tmp/.X11-unix/:/tmp/.X11-unix:rw \
+-e DISPLAY=$DISPLAY \
+hand_gesture:latest
+
+python main.py 
+````
+
+The following options can be specified when running the demo:
+
+- --device\
+Specifying the camera device number (Default：0)
+- --width\
+Width at the time of camera capture (Default：960)
+- --height\
+Height at the time of camera capture (Default：540)
+- --use_static_image_mode\
+Whether to use the static_image_mode option for MediaPipe inference (Default： Unspecified)
+- --min_detection_confidence\
+Detection confidence threshold (Default：0.5)
+- --min_tracking_confidence\
+Tracking confidence threshold (Default：0.5)
